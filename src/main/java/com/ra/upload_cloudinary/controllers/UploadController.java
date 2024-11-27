@@ -1,5 +1,6 @@
 package com.ra.upload_cloudinary.controllers;
 
+import com.ra.upload_cloudinary.models.services.IImageService;
 import com.ra.upload_cloudinary.services.UploadService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +18,13 @@ import java.net.URI;
 @RequiredArgsConstructor
 public class UploadController
 {
-    private final UploadService uploadService;
+    private final IImageService imageService;
 
     @PostMapping("/upload")
     public ResponseEntity<?> handleUpload(@RequestParam MultipartFile file) throws IOException
     {
         return ResponseEntity.created(URI.create("api/v1/auth/upload")).body(
-                uploadService.uploadFile(file)
+                imageService.save(file)
         );
     }
 }
