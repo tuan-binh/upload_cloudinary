@@ -1,0 +1,11 @@
+# thông tin cloud-name, api-key, api-secret lấy ở trên cloudinary
+cloudinary:
+  cloud-name: dctzt6ih7
+  api-key: 152922968893657
+  api-secret: zEf-4lyxxrPqJc1TNe5pBOwL3s4
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/upload?createDatabaseIfNotExist=true
+    username: root
+    password: 123456
